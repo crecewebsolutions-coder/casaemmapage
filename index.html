@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Emma | Design & Remodel — Phoenix & Scottsdale, AZ</title>
+    <meta name="description" content="Casa Emma Design & Remodel — Boutique Arizona contractor specializing in open-concept kitchens, handcrafted brick bóvedas, spa bathrooms, and modern residential transformations. Call 623-224-0331.">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="logo-clean-trans.png">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           COLOR PALETTE DERIVED STRICTLY FROM CASA EMMA LOGO
+           - Sandstone / Linen Canvas: #EDE6DD
+           - Card Surface: #F5EFE6 & #FFFFFF
+           - Architectural Black: #181818
+           - Agave & Saguaro Green: #4E5B3D
+           - Saguaro Dark Green: #3D482F
+           - Warm Antique Brass / Gold: #B2945B
+           - Sandstone Border: #D8CEBF
+           - Text Dark: #1C1B19
+           - Text Muted: #666055
+        ===================================================== */
+        :root {
+            --c-bg: #EDE6DD;
+            --c-bg-card: #F5EFE6;
+            --c-bg-white: #FFFFFF;
+            --c-black: #181818;
+            --c-black-surface: #22201D;
+            --c-cactus: #4E5B3D;
+            --c-cactus-dark: #38422B;
+            --c-gold: #B2945B;
+            --c-gold-hover: #C5A66B;
+            --c-border: #D8CEBF;
+            --c-border-light: rgba(216, 206, 191, 0.4);
+            --c-text: #1C1B19;
+            --c-text-secondary: #5C5549;
+            --c-text-muted: #7E7668;
+            --c-text-light: #EDE6DD;
+
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            --container: 1200px;
+            --trans: all 0.28s ease;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            padding-bottom: 70px; /* Space for mobile sticky bar */
+        }
+
+        @media (min-width: 769px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--trans);
+        }
+
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* SECTION HEADINGS - CLEAN & CONCISE */
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--c-cactus);
+            margin-bottom: 8px;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 1px;
+            background: var(--c-gold);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--c-black);
+            margin-bottom: 12px;
+        }
+
+        .section-title.light {
+            color: #FFFFFF;
+        }
+
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--c-text-secondary);
+            max-width: 620px;
+            font-weight: 400;
+        }
+
+        .section-desc.light {
+            color: #CFC7BC;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 26px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--trans);
+            border: 1px solid transparent;
+        }
+
+        .btn-gold {
+            background-color: var(--c-gold);
+            color: #FFFFFF;
+            border-color: var(--c-gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--c-gold-hover);
+            border-color: var(--c-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-black {
+            background-color: var(--c-black);
+            color: #FFFFFF;
+            border-color: var(--c-black);
+        }
+
+        .btn-black:hover {
+            background-color: #2D2B27;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--c-black);
+            border-color: var(--c-black);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--c-black);
+            color: #FFFFFF;
+        }
+
+        .btn-outline-light {
+            background-color: transparent;
+            color: #FFFFFF;
+            border-color: rgba(255, 255, 255, 0.45);
+        }
+
+        .btn-outline-light:hover {
+            border-color: var(--c-gold);
+            color: var(--c-gold);
+        }
+
+        /* =====================================================
+           00. TOP BAR
+        ===================================================== */
+        .top-bar {
+            background-color: var(--c-black);
+            color: #C5BCB0;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .top-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .top-phone-link {
+            color: var(--c-gold);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-phone-link:hover {
+            color: #FFFFFF;
+        }
+
+        /* =====================================================
+           01. NAVIGATION
+        ===================================================== */
+        header#siteHeader {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(237, 230, 221, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--c-border);
+            transition: var(--trans);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 78px;
+        }
+
+        /* OFFICIAL LOGO IN NAV */
+        .nav-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 56px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--c-text);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--c-cactus);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .nav-phone-btn {
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--c-black);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border: 1px solid var(--c-border);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-phone-btn:hover {
+            background: #FFFFFF;
+            border-color: var(--c-black);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-toggle-bar {
+            width: 22px;
+            height: 2px;
+            background-color: var(--c-black);
+            position: absolute;
+            transition: var(--trans);
+        }
+
+        .mobile-toggle-bar:nth-child(1) { transform: translateY(-6px); }
+        .mobile-toggle-bar:nth-child(2) { transform: translateY(0); }
+        .mobile-toggle-bar:nth-child(3) { transform: translateY(6px); }
+
+        .mobile-toggle.active .mobile-toggle-bar:nth-child(1) { transform: rotate(45deg); }
+        .mobile-toggle.active .mobile-toggle-bar:nth-child(2) { opacity: 0; }
+        .mobile-toggle.active .mobile-toggle-bar:nth-child(3) { transform: rotate(-45deg); }
+
+        /* MOBILE MENU DRAWER */
+        .mobile-drawer {
+            display: none;
+            position: fixed;
+            top: 78px;
+            left: 0;
+            right: 0;
+            background: var(--c-bg-card);
+            border-bottom: 1px solid var(--c-border);
+            padding: 24px;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 999;
+            box-shadow: 0 16px 30px rgba(0,0,0,0.08);
+        }
+
+        .mobile-drawer.active {
+            display: flex;
+        }
+
+        .mobile-drawer a {
+            font-size: 0.86rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--c-black);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        /* =====================================================
+           02. HERO SECTION
+        ===================================================== */
+        #hero {
+            position: relative;
+            min-height: 82vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--c-black);
+            color: #FFFFFF;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 38%;
+            filter: brightness(0.68) contrast(1.05);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(
+                180deg,
+                rgba(24, 24, 24, 0.4) 0%,
+                rgba(24, 24, 24, 0.72) 70%,
+                rgba(24, 24, 24, 0.94) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 80px 0 60px;
+            max-width: 760px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(78, 91, 61, 0.65);
+            border: 1px solid var(--c-gold);
+            padding: 5px 14px;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 18px;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+            font-weight: 500;
+            line-height: 1.1;
+            color: #FFFFFF;
+            margin-bottom: 18px;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--c-bg);
+        }
+
+        .hero-subtitle {
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #D8D1C5;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-badges-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .hero-badge-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-badge-title {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--c-gold);
+            letter-spacing: 0.04em;
+        }
+
+        .hero-badge-sub {
+            font-size: 0.72rem;
+            color: #ABA396;
+            margin-top: 2px;
+        }
+
+        /* =====================================================
+           03. BEFORE & AFTER COMPARISON (FAST & INTERACTIVE)
+        ===================================================== */
+        #transformations {
+            padding: 90px 0;
+            background-color: var(--c-bg);
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .transform-header-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* 3 REAL TABS */
+        .project-tabs {
+            display: inline-flex;
+            background: var(--c-bg-card);
+            padding: 4px;
+            border: 1px solid var(--c-border);
+            gap: 4px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 9px 18px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--c-text-secondary);
+            cursor: pointer;
+            transition: var(--trans);
+        }
+
+        .tab-btn:hover {
+            color: var(--c-black);
+        }
+
+        .tab-btn.active {
+            background: var(--c-black);
+            color: #FFFFFF;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        .comparison-stage {
+            position: relative;
+            background: #000000;
+            border: 1px solid var(--c-border);
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            user-select: none;
+            cursor: col-resize;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+
+        .stage-layer {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .stage-layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .layer-after {
+            z-index: 1;
+        }
+
+        .layer-before {
+            z-index: 2;
+            clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0);
+        }
+
+        .slider-bar {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--slider-pos, 50%);
+            width: 2px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .slider-knob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--c-black);
+            border: 2px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+        }
+
+        .slider-knob svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .pill-label {
+            position: absolute;
+            top: 16px;
+            z-index: 10;
+            padding: 5px 12px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            pointer-events: none;
+        }
+
+        .pill-before {
+            left: 16px;
+            background: rgba(24, 24, 24, 0.85);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .pill-after {
+            right: 16px;
+            background: rgba(78, 91, 61, 0.9);
+            color: #FFFFFF;
+            border: 1px solid var(--c-gold);
+        }
+
+        .slider-bottom-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+        }
+
+        .slider-tip {
+            font-size: 0.74rem;
+            color: var(--c-text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        .btn-autoscan {
+            background: transparent;
+            border: 1px solid var(--c-border);
+            padding: 5px 14px;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--c-text-secondary);
+            cursor: pointer;
+            transition: var(--trans);
+        }
+
+        .btn-autoscan:hover {
+            border-color: var(--c-black);
+            color: var(--c-black);
+        }
+
+        /* PROJECT SIDE CARD */
+        .project-side-card {
+            background: var(--c-bg-card);
+            border: 1px solid var(--c-border);
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .side-num {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--c-cactus);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .side-title {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--c-black);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .side-desc {
+            font-size: 0.86rem;
+            color: var(--c-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .side-specs {
+            border-top: 1px solid var(--c-border);
+            padding-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.78rem;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .spec-k {
+            color: var(--c-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .spec-v {
+            font-weight: 600;
+            color: var(--c-black);
+        }
+
+        /* =====================================================
+           04. SERVICES (PUNCHY 5-CARD GRID)
+        ===================================================== */
+        #services {
+            padding: 90px 0;
+            background-color: var(--c-bg-card);
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .services-header-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .services-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-box {
+            background: var(--c-bg);
+            border: 1px solid var(--c-border);
+            padding: 32px 26px;
+            transition: var(--trans);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-box:hover {
+            transform: translateY(-3px);
+            background: #FFFFFF;
+            border-color: var(--c-gold);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+        }
+
+        .service-idx {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            color: var(--c-cactus);
+            margin-bottom: 12px;
+        }
+
+        .service-name {
+            font-family: var(--font-serif);
+            font-size: 1.55rem;
+            font-weight: 500;
+            color: var(--c-black);
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .service-summary {
+            font-size: 0.84rem;
+            color: var(--c-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .service-features-list {
+            list-style: none;
+            border-top: 1px solid var(--c-border);
+            padding-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.76rem;
+            color: var(--c-text-secondary);
+        }
+
+        .service-features-list li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .service-features-list li::before {
+            content: '—';
+            color: var(--c-gold);
+            font-weight: 600;
+        }
+
+        /* =====================================================
+           05. CURATED PROJECT GALLERY (AUTHENTIC WORK)
+        ===================================================== */
+        #portfolio {
+            padding: 90px 0;
+            background-color: var(--c-bg-card);
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .portfolio-header-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-card {
+            position: relative;
+            background: var(--c-black);
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border: 1px solid var(--c-border);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+            transition: var(--trans);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            border-color: var(--c-gold);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-info {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(24, 24, 24, 0) 45%,
+                rgba(24, 24, 24, 0.88) 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 22px;
+            color: #FFFFFF;
+        }
+
+        .gallery-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--c-gold);
+            margin-bottom: 4px;
+        }
+
+        .gallery-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.25;
+            color: #FFFFFF;
+        }
+
+        /* =====================================================
+           06. COMPANY POLICIES & STANDARDS
+        ===================================================== */
+        #policies {
+            padding: 90px 0;
+            background-color: var(--c-bg);
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .policies-header {
+            margin-bottom: 46px;
+        }
+
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .policy-card {
+            background: #FFFFFF;
+            border: 1px solid var(--c-border);
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            transition: var(--trans);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+        }
+
+        .policy-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--c-gold);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+        }
+
+        .policy-num {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--c-gold);
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .policy-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--c-black);
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .policy-text {
+            font-size: 0.85rem;
+            color: var(--c-text-secondary);
+            line-height: 1.6;
+        }
+
+        .commitment-card {
+            margin-top: 40px;
+            background: var(--c-black);
+            border-top: 2px solid var(--c-gold);
+            padding: 44px 32px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .commitment-badge {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 14px;
+        }
+
+        .commitment-quote {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--c-text-light);
+            max-width: 800px;
+            margin: 0 auto 26px;
+            line-height: 1.5;
+        }
+
+        .commitment-action {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* =====================================================
+           06. WHY CHOOSE CASA EMMA (CONCISE, AUTHENTIC)
+        ===================================================== */
+        #why {
+            padding: 80px 0;
+            background-color: var(--c-bg-card);
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            background: #FFFFFF;
+            border: 1px solid var(--c-border);
+            padding: 32px 24px;
+        }
+
+        .why-num {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--c-gold);
+            letter-spacing: 0.18em;
+            margin-bottom: 10px;
+        }
+
+        .why-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--c-black);
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .why-card-desc {
+            font-size: 0.84rem;
+            color: var(--c-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* =====================================================
+           07. CONTACT & ESTIMATE REQUEST
+        ===================================================== */
+        #contact {
+            padding: 90px 0;
+            background-color: var(--c-bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .contact-info-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-callout {
+            background: var(--c-bg-card);
+            border: 1px solid var(--c-border);
+            padding: 26px;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .callout-phone-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .phone-icon-wrap {
+            width: 44px;
+            height: 44px;
+            background: var(--c-cactus);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .phone-icon-wrap svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .callout-phone-title {
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--c-text-muted);
+        }
+
+        .callout-phone-num {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--c-black);
+            letter-spacing: 0.04em;
+        }
+
+        .contact-form-box {
+            background: #FFFFFF;
+            border: 1px solid var(--c-border);
+            padding: 36px 30px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+        }
+
+        .form-title {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--c-black);
+            margin-bottom: 6px;
+        }
+
+        .form-subtitle {
+            font-size: 0.82rem;
+            color: var(--c-text-secondary);
+            margin-bottom: 22px;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 14px;
+        }
+
+        .form-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--c-black);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--c-border);
+            background: var(--c-bg);
+            font-size: 0.88rem;
+            color: var(--c-black);
+            border-radius: 0;
+            transition: var(--trans);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--c-gold);
+            background: #FFFFFF;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 95px;
+        }
+
+        .form-btn-submit {
+            width: 100%;
+            padding: 15px;
+            margin-top: 6px;
+        }
+
+        /* =====================================================
+           08. FOOTER
+        ===================================================== */
+        footer#siteFooter {
+            background-color: var(--c-black);
+            color: #C5BCB0;
+            padding: 70px 0 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo-img {
+            height: 74px;
+            width: auto;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .footer-bio {
+            font-size: 0.82rem;
+            color: #A39B8F;
+            line-height: 1.6;
+            max-width: 320px;
+        }
+
+        .footer-heading {
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.8rem;
+        }
+
+        .footer-links-list a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            color: #7A7266;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* =====================================================
+           09. MOBILE STICKY CALL / ACTION BAR
+        ===================================================== */
+        .mobile-sticky-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 995;
+            background: var(--c-black);
+            border-top: 1px solid var(--c-gold);
+            padding: 10px 16px;
+            box-shadow: 0 -6px 18px rgba(0,0,0,0.25);
+        }
+
+        .mobile-sticky-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .mobile-act-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .mobile-act-call {
+            background: var(--c-cactus);
+            color: #FFFFFF;
+        }
+
+        .mobile-act-chat {
+            background: var(--c-gold);
+            color: #FFFFFF;
+        }
+
+        .mobile-act-btn svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* =====================================================
+           RESPONSIVE DESIGN (ALL DEVICES)
+        ===================================================== */
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-cards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .policies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu, .nav-actions .btn {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .mobile-sticky-bar {
+                display: block;
+            }
+
+            .top-bar {
+                display: none; /* Keep header clean on small phones */
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-badges-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .transform-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-tabs {
+                width: 100%;
+            }
+
+            .tab-btn {
+                flex: 1;
+                text-align: center;
+                padding: 9px 8px;
+                font-size: 0.68rem;
+            }
+
+            .services-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .policies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .form-row-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-box {
+                padding: 26px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =====================================================
+         00. TOP BAR
+    ===================================================== -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div>
+                <span>Phoenix Metro &bull; Scottsdale &bull; Paradise Valley</span>
+            </div>
+            <div>
+                <span>Direct Owner Contact: </span>
+                <a href="tel:6232240331" class="top-phone-link">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>623.224.0331</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         01. HEADER & NAVIGATION
+    ===================================================== -->
+    <header id="siteHeader">
+        <div class="container nav-container">
+            <!-- OFFICIAL LOGO -->
+            <a href="#hero" class="nav-logo-link" title="Casa Emma Design & Remodel">
+                <img class="nav-logo-img" src="logo-clean-trans.png" alt="Casa Emma Design & Remodel">
+            </a>
+
+            <!-- NAV LINKS -->
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#transformations" class="nav-link">Before & After</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Projects</a></li>
+                <li><a href="#policies" class="nav-link">Policies</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- NAV ACTIONS -->
+            <div class="nav-actions">
+                <a href="tel:6232240331" class="nav-phone-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>623.224.0331</span>
+                </a>
+                <a href="#contact" class="btn btn-black" style="padding: 10px 18px;">
+                    <span>Free Estimate</span>
+                </a>
+                <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <span class="mobile-toggle-bar"></span>
+                    <span class="mobile-toggle-bar"></span>
+                    <span class="mobile-toggle-bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE DRAWER -->
+        <div class="mobile-drawer" id="mobileDrawer">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#transformations" class="mobile-link">Before & After</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#portfolio" class="mobile-link">Projects</a>
+            <a href="#policies" class="mobile-link">Policies</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="tel:6232240331" style="color: var(--c-cactus); font-weight: 700;">Direct Call: 623.224.0331</a>
+        </div>
+    </header>
+
+    <!-- =====================================================
+         02. HERO SECTION
+    ===================================================== -->
+    <section id="hero">
+        <div class="hero-bg">
+            <img src="fotoscasaemma/despuesdepasillo.jpg" alt="Casa Emma Handcrafted Masonry & Remodeling">
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span>Boutique Arizona General Contractor</span>
+                </div>
+                <h1 class="hero-title">
+                    Custom kitchens, bóvedas &amp; <em>desert</em> living.
+                </h1>
+                <p class="hero-subtitle">
+                    Hands-on residential remodeling across Phoenix and Scottsdale. Wall teardowns, artisan brick masonry, and open living spaces built with uncompromising detail.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#transformations" class="btn btn-gold">
+                        <span>See Before & After</span>
+                    </a>
+                    <a href="tel:6232240331" class="btn btn-outline-light">
+                        <span>Call 623.224.0331</span>
+                    </a>
+                </div>
+
+                <div class="hero-badges-row">
+                    <div class="hero-badge-item">
+                        <span class="hero-badge-title">Owner On-Site Daily</span>
+                        <span class="hero-badge-sub">Direct builder supervision</span>
+                    </div>
+                    <div class="hero-badge-item">
+                        <span class="hero-badge-title">Fixed Itemized Quotes</span>
+                        <span class="hero-badge-sub">No surprise extras</span>
+                    </div>
+                    <div class="hero-badge-item">
+                        <span class="hero-badge-title">Clean Daily Jobsite</span>
+                        <span class="hero-badge-sub">Dust protection &amp; floor care</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         03. BEFORE & AFTER INTERACTIVE COMPARISON
+         100% Real Projects from fotoscasaemma
+    ===================================================== -->
+    <section id="transformations">
+        <div class="container">
+            <div class="transform-header-row">
+                <div>
+                    <span class="section-eyebrow">Real Transformations</span>
+                    <h2 class="section-title">Before &amp; After Showcase</h2>
+                    <p class="section-desc">
+                        Drag the central bar to inspect authentic before-and-after documentation from our active Arizona jobsites.
+                    </p>
+                </div>
+
+                <!-- 3 REAL TABS -->
+                <div class="project-tabs" role="tablist">
+                    <button class="tab-btn active" data-p="kitchen" role="tab">01. Open Kitchen</button>
+                    <button class="tab-btn" data-p="garage" role="tab">02. Studio Garage</button>
+                    <button class="tab-btn" data-p="boveda" role="tab">03. Brick Bóveda</button>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- INTERACTIVE SLIDER -->
+                <div>
+                    <div class="comparison-stage" id="compareStage" style="--slider-pos: 50%;">
+                        <!-- AFTER (BASE) -->
+                        <div class="stage-layer layer-after">
+                            <img id="afterImg" src="fotoscasaemma/despuescocina.jpg" alt="Completed Remodel View">
+                        </div>
+
+                        <!-- BEFORE (CLIPPED) -->
+                        <div class="stage-layer layer-before" id="beforeLayer">
+                            <img id="beforeImg" src="fotoscasaemma/antescocina.jpg" alt="Before Remodel View">
+                        </div>
+
+                        <!-- SLIDER BAR -->
+                        <div class="slider-bar" id="sliderBar">
+                            <div class="slider-knob">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                    <polyline points="9 18 3 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <span class="pill-label pill-before">Before</span>
+                        <span class="pill-label pill-after">Completed</span>
+                    </div>
+
+                    <div class="slider-bottom-controls">
+                        <span class="slider-tip">Drag slider or swipe to compare</span>
+                        <button class="btn-autoscan" id="autoScanBtn">Auto Preview</button>
+                    </div>
+                </div>
+
+                <!-- PROJECT SNAPSHOT -->
+                <div class="project-side-card">
+                    <div>
+                        <div class="side-num" id="sideNum">Project 01 of 03</div>
+                        <h3 class="side-title" id="sideTitle">Kitchen Wall Demolition &amp; Open Concept</h3>
+                        <p class="side-desc" id="sideDesc">
+                            Removed the central dividing wall to create a continuous open floor plan. Fabricated a custom quartz preparation island, two-tone cabinetry, recessed LED lighting, and continuous plank floors.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="side-specs">
+                            <div class="spec-row">
+                                <span class="spec-k">Scope</span>
+                                <span class="spec-v" id="sideScope">Wall Demo + Full Kitchen</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-k">Timeline</span>
+                                <span class="spec-v" id="sideTime">Approx. 4 Weeks</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-k">Location</span>
+                                <span class="spec-v" id="sideLoc">Phoenix, AZ</span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn btn-black" style="width: 100%;">
+                            <span>Inquire for Similar Project</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         04. SERVICES (CONCISE & VISUAL)
+    ===================================================== -->
+    <section id="services">
+        <div class="container">
+            <div class="services-header-row">
+                <div>
+                    <span class="section-eyebrow">Our Specialties</span>
+                    <h2 class="section-title">Remodeling Services</h2>
+                </div>
+                <div>
+                    <p class="section-desc">
+                        Full-service design and construction with direct owner craftsmanship.
+                    </p>
+                </div>
+            </div>
+
+            <div class="services-cards-grid">
+                <!-- 01 -->
+                <div class="service-box">
+                    <div>
+                        <div class="service-idx">01 / SERVICE</div>
+                        <h3 class="service-name">Kitchen Transformations</h3>
+                        <p class="service-summary">
+                            Structural wall demolition, expanded quartz &amp; porcelain islands, custom cabinetry, and seamless flow into living spaces.
+                        </p>
+                    </div>
+                    <ul class="service-features-list">
+                        <li>Load-Bearing Wall Removal</li>
+                        <li>Waterfall Prep Islands</li>
+                        <li>Custom Shaker Cabinetry</li>
+                    </ul>
+                </div>
+
+                <!-- 02 -->
+                <div class="service-box">
+                    <div>
+                        <div class="service-idx">02 / SERVICE</div>
+                        <h3 class="service-name">Spa Bathrooms</h3>
+                        <p class="service-summary">
+                            Walk-in showers, handcrafted zellige tile feature walls, floating rift-oak vanities, ambient LED mirrors, and matte black fixtures.
+                        </p>
+                    </div>
+                    <ul class="service-features-list">
+                        <li>Frameless Glass Enclosures</li>
+                        <li>Floating Vanities with Under-Glow</li>
+                        <li>Artisanal Zellige Tile Setting</li>
+                    </ul>
+                </div>
+
+                <!-- 03 -->
+                <div class="service-box">
+                    <div>
+                        <div class="service-idx">03 / SERVICE</div>
+                        <h3 class="service-name">Brick Bóveda Ceilings</h3>
+                        <p class="service-summary">
+                            Authentic traditional masonry specializing in hand-laid Mexican red brick barrel vaults and arched residential passageways.
+                        </p>
+                    </div>
+                    <ul class="service-features-list">
+                        <li>Handcrafted Barrel Vaults</li>
+                        <li>Custom Mortar Washes</li>
+                        <li>Iron Lantern Integration</li>
+                    </ul>
+                </div>
+
+                <!-- 04 -->
+                <div class="service-box">
+                    <div>
+                        <div class="service-idx">04 / SERVICE</div>
+                        <h3 class="service-name">Studio Garage Conversions</h3>
+                        <p class="service-summary">
+                            Transforming dusty garages into conditioned creative studios, home gyms, or offices with polished concrete and mini-split AC.
+                        </p>
+                    </div>
+                    <ul class="service-features-list">
+                        <li>Polished Concrete Slabs</li>
+                        <li>Architectural Matte Black Ceilings</li>
+                        <li>Mini-Split Climate Control</li>
+                    </ul>
+                </div>
+
+                <!-- 05 -->
+                <div class="service-box">
+                    <div>
+                        <div class="service-idx">05 / SERVICE</div>
+                        <h3 class="service-name">Desert Outdoor Living</h3>
+                        <p class="service-summary">
+                            Sunken travertine conversation lounges, linear gas fire tables, exterior porcelain tile, and indoor-outdoor sliding glass transitions.
+                        </p>
+                    </div>
+                    <ul class="service-features-list">
+                        <li>Sunken Fire Table Patios</li>
+                        <li>Pool Deck Travertine &amp; Tile</li>
+                        <li>Seamless Pocket Glass Openings</li>
+                    </ul>
+                </div>
+
+                <!-- 06 -->
+                <div class="service-box">
+                    <div>
+                        <div class="service-idx">06 / SERVICE</div>
+                        <h3 class="service-name">Custom Millwork &amp; Finish</h3>
+                        <p class="service-summary">
+                            Floor-to-ceiling dining room cabinetry, fireplace feature walls, continuous plank flooring, baseboards, and modern interior doors.
+                        </p>
+                    </div>
+                    <ul class="service-features-list">
+                        <li>Built-In Storage &amp; Displays</li>
+                        <li>Plank &amp; Hardwood Flooring</li>
+                        <li>Solid-Core Interior Doors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         05. CURATED PROJECT GALLERY (AUTHENTIC WORK)
+         Showcasing Casa Emma remodeling projects
+    ===================================================== -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="portfolio-header-row">
+                <div>
+                    <span class="section-eyebrow">Real Works</span>
+                    <h2 class="section-title">Completed Projects</h2>
+                </div>
+                <p class="section-desc" style="max-width: 480px; margin: 0;">
+                    Authentic Arizona craftsmanship across custom kitchens, spa bathrooms, handcrafted masonry bóvedas, and conditioned creative studios.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- 01: SPA BATHROOM SUITE -->
+                <div class="gallery-card">
+                    <img src="fotoscasaemma/WhatsApp Image 2026-09-16 at 10.29.12 PM (1).jpeg" alt="Casa Emma Primary Spa Bathroom Suite">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Bathrooms</span>
+                        <h4 class="gallery-title">Primary Spa Bath Suite</h4>
+                    </div>
+                </div>
+
+                <!-- 02: OPEN KITCHEN REMODEL -->
+                <div class="gallery-card">
+                    <img src="fotoscasaemma/despuescocina.jpg" alt="Casa Emma Open Kitchen Remodel">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Kitchens</span>
+                        <h4 class="gallery-title">Open-Concept Kitchen Island</h4>
+                    </div>
+                </div>
+
+                <!-- 03: DINING ROOM MILLWORK -->
+                <div class="gallery-card">
+                    <img src="fotoscasaemma/WhatsApp Image 2026-09-16 at 10.29.11 PM (6).jpeg" alt="Casa Emma Custom Dining Cabinetry">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Custom Living</span>
+                        <h4 class="gallery-title">Dining Room Built-In Millwork</h4>
+                    </div>
+                </div>
+
+                <!-- 04: ARTISAN ZELLIGE BATH -->
+                <div class="gallery-card">
+                    <img src="fotoscasaemma/despuesbano.jpeg" alt="Casa Emma Zellige Tile Bathroom">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Bathrooms</span>
+                        <h4 class="gallery-title">Artisan Green Zellige Tile Bath</h4>
+                    </div>
+                </div>
+
+                <!-- 05: STUDIO GARAGE CONVERSION -->
+                <div class="gallery-card">
+                    <img src="fotoscasaemma/antesdegarage.jpeg" alt="Casa Emma Studio Garage Conversion">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Specialty Spaces</span>
+                        <h4 class="gallery-title">Modern Studio Garage Conversion</h4>
+                    </div>
+                </div>
+
+                <!-- 06: HAND-LAID BRICK BOVEDA -->
+                <div class="gallery-card">
+                    <img src="fotoscasaemma/despuesdepasillo.jpg" alt="Casa Emma Brick Boveda Ceiling">
+                    <div class="gallery-info">
+                        <span class="gallery-tag">Masonry</span>
+                        <h4 class="gallery-title">Hand-Laid Brick Bóveda Hallway</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         06. COMPANY POLICIES & STANDARDS
+         Clear guidelines, client transparency, and construction standards
+    ===================================================== -->
+    <section id="policies">
+        <div class="container">
+            <div class="policies-header">
+                <span class="section-eyebrow">Integrity &amp; Standards</span>
+                <h2 class="section-title">Project Policies &amp; Guidelines</h2>
+                <p class="section-desc">
+                    Clear expectations, Arizona statutory compliance, and transparent communication for every residential remodel we undertake.
+                </p>
+            </div>
+
+            <div class="policies-grid">
+                <!-- 01 -->
+                <div class="policy-card">
+                    <div class="policy-num">01</div>
+                    <h3 class="policy-title">Estimates &amp; Project Pricing</h3>
+                    <p class="policy-text">
+                        All estimates are based on the information, plans, and project scope available at the time of preparation. Final pricing may vary due to unforeseen conditions, engineering requirements, material selections, or changes in the scope of work.
+                    </p>
+                </div>
+
+                <!-- 02 -->
+                <div class="policy-card">
+                    <div class="policy-num">02</div>
+                    <h3 class="policy-title">Payments &amp; Agreements</h3>
+                    <p class="policy-text">
+                        All payment schedules, deposits, and project milestones will be clearly outlined in a written construction agreement. Payments are subject to applicable Arizona laws and contractual terms.
+                    </p>
+                </div>
+
+                <!-- 03 -->
+                <div class="policy-card">
+                    <div class="policy-num">03</div>
+                    <h3 class="policy-title">Changes &amp; Additional Work</h3>
+                    <p class="policy-text">
+                        Any work outside the original agreed scope must be documented and approved through a written change order, including applicable pricing and schedule adjustments.
+                    </p>
+                </div>
+
+                <!-- 04 -->
+                <div class="policy-card">
+                    <div class="policy-num">04</div>
+                    <h3 class="policy-title">Construction Timelines</h3>
+                    <p class="policy-text">
+                        We strive to complete every project within the agreed timeframe. However, schedules may be affected by permit approvals, inspections, weather, material availability, unforeseen site conditions, or customer-requested changes.
+                    </p>
+                </div>
+
+                <!-- 05 -->
+                <div class="policy-card">
+                    <div class="policy-num">05</div>
+                    <h3 class="policy-title">Permits &amp; Building Standards</h3>
+                    <p class="policy-text">
+                        Projects will be performed in accordance with applicable building codes, approved plans, permit requirements, and local regulations.
+                    </p>
+                </div>
+
+                <!-- 06 -->
+                <div class="policy-card">
+                    <div class="policy-num">06</div>
+                    <h3 class="policy-title">Quality &amp; Workmanship</h3>
+                    <p class="policy-text">
+                        We are committed to professional workmanship and customer satisfaction. Applicable workmanship warranties and their terms will be provided in the construction agreement.
+                    </p>
+                </div>
+
+                <!-- 07 -->
+                <div class="policy-card">
+                    <div class="policy-num">07</div>
+                    <h3 class="policy-title">Customer Communication</h3>
+                    <p class="policy-text">
+                        We believe successful projects begin with clear communication, transparency, mutual respect, and timely decisions throughout the construction process.
+                    </p>
+                </div>
+
+                <!-- 08 -->
+                <div class="policy-card">
+                    <div class="policy-num">08</div>
+                    <h3 class="policy-title">Privacy &amp; Customer Information</h3>
+                    <p class="policy-text">
+                        We respect our customers&apos; privacy. Information submitted through our website will be used to respond to inquiries, prepare estimates, and provide requested services, as further described in our Privacy Policy.
+                    </p>
+                </div>
+            </div>
+
+            <!-- OUR COMMITMENT -->
+            <div class="commitment-card">
+                <div class="commitment-badge">Our Commitment</div>
+                <blockquote class="commitment-quote">
+                    &ldquo;At Casa Emma, our goal is not simply to build structures, but to build lasting relationships through quality, integrity, and dependable service.&rdquo;
+                </blockquote>
+                <div class="commitment-action">
+                    <a href="#contact" class="btn btn-gold">
+                        <span>Request an Estimate</span>
+                    </a>
+                    <a href="tel:6232240331" class="btn btn-outline-light">
+                        <span>Direct Call: 623.224.0331</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         06. WHY CASA EMMA (SHORT, DIRECT, NO FLUFF)
+    ===================================================== -->
+    <section id="why">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-num">01 / COMMITMENT</div>
+                    <h3 class="why-card-title">Daily Owner Oversight</h3>
+                    <p class="why-card-desc">
+                        No middle-tier sales brokers. The founders estimating your remodel run demolition, framing, and finish details on-site every single day.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-num">02 / COMMITMENT</div>
+                    <h3 class="why-card-title">Transparent Fixed Pricing</h3>
+                    <p class="why-card-desc">
+                        Every quote is clear, itemized, and honest. You know exact labor and material costs before hammer touches wall.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-num">03 / COMMITMENT</div>
+                    <h3 class="why-card-title">Clean, Protected Jobsites</h3>
+                    <p class="why-card-desc">
+                        Floor protection, zip-wall dust containment, and a full daily sweep at the end of every work day to keep your home respected.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         07. FAST ESTIMATE & DIRECT CONTACT
+    ===================================================== -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- DIRECT DETAILS -->
+                <div class="contact-info-block">
+                    <span class="section-eyebrow">Get In Touch</span>
+                    <h2 class="section-title">Schedule a Consultation</h2>
+                    <p class="section-desc">
+                        Call us directly or send a message. We visit your home in person to discuss your remodel and provide an honest estimate.
+                    </p>
+
+                    <div class="contact-callout">
+                        <a href="tel:6232240331" class="callout-phone-box">
+                            <div class="phone-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="callout-phone-title">Direct Phone Line</div>
+                                <div class="callout-phone-num">623.224.0331</div>
+                            </div>
+                        </a>
+
+                        <div style="font-size: 0.8rem; color: var(--c-text-muted); line-height: 1.5; border-top: 1px solid var(--c-border); padding-top: 14px;">
+                            <span>Serving Phoenix, Scottsdale, Paradise Valley &amp; surrounding Valley areas.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAST FORM -->
+                <div class="contact-form-box">
+                    <h3 class="form-title">Request an Estimate</h3>
+                    <p class="form-subtitle">Fill out the quick form below. We respond within 24 hours.</p>
+
+                    <form id="estimateForm" action="https://formspree.io/f/mvkzderb" method="POST">
+                        <div class="form-row-2">
+                            <div class="form-field">
+                                <label class="form-label" for="fName">Full Name *</label>
+                                <input type="text" id="fName" name="name" class="form-control" placeholder="Your name" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="fEmail">Your Email *</label>
+                                <input type="email" id="fEmail" name="email" class="form-control" placeholder="name@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-field">
+                                <label class="form-label" for="fPhone">Phone Number *</label>
+                                <input type="tel" id="fPhone" name="phone" class="form-control" placeholder="623-224-0331" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="fService">Project Type *</label>
+                                <select id="fService" name="service" class="form-control" required>
+                                    <option value="" disabled selected>Select Remodel Type</option>
+                                    <option value="Kitchen Remodel & Wall Teardown">Kitchen Remodel &amp; Wall Teardown</option>
+                                    <option value="Bathroom & Spa Renovation">Bathroom &amp; Spa Renovation</option>
+                                    <option value="Handmade Brick Boveda Ceiling">Handmade Brick Bóveda Ceiling</option>
+                                    <option value="Garage / Studio Space Conversion">Garage / Studio Space Conversion</option>
+                                    <option value="Whole Home or Custom Remodel">Whole Home or Other Remodel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label class="form-label" for="fMessage">Your Message / Project Details *</label>
+                            <textarea id="fMessage" name="message" class="form-control" placeholder="Tell us briefly about your space, timeline, and what you would like to remodel..." required></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-gold form-btn-submit">
+                            <span id="btnText">Submit Estimate Request</span>
+                        </button>
+                        <div id="formStatus" style="display:none; margin-top: 16px; padding: 14px 18px; border-radius: 4px; font-size: 0.88rem; line-height: 1.5;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         08. FOOTER
+    ===================================================== -->
+    <footer id="siteFooter">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- OFFICIAL LOGO & INFO -->
+                <div>
+                    <img class="footer-logo-img" src="logo-light.png" alt="Casa Emma Design & Remodel">
+                    <p class="footer-bio">
+                        Boutique residential remodeling in the Phoenix Valley. Meticulous craftsmanship, direct owner oversight, and transparent line-item pricing.
+                    </p>
+                </div>
+
+                <!-- NAVIGATION -->
+                <div>
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#transformations">Before &amp; After</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Projects</a></li>
+                        <li><a href="#policies">Policies</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT & PHONE -->
+                <div>
+                    <h4 class="footer-heading">Direct Contact</h4>
+                    <ul class="footer-links-list">
+                        <li>
+                            <a href="tel:6232240331" style="color: var(--c-gold); font-weight: 700;">Phone: 623.224.0331</a>
+                        </li>
+                        <li>Phoenix &bull; Scottsdale &bull; Paradise Valley</li>
+                        <li>Licensed, Bonded &amp; Insured in AZ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; <span id="yearVal"></span> Casa Emma Design &amp; Remodel. All rights reserved.
+                </div>
+                <div>
+                    <span>Phone: 623.224.0331</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+         09. STICKY MOBILE CALL / CHAT BAR (PHONES ONLY)
+    ===================================================== -->
+    <div class="mobile-sticky-bar">
+        <div class="mobile-sticky-inner">
+            <a href="tel:6232240331" class="mobile-act-btn mobile-act-call">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Call Now</span>
+            </a>
+            <a href="https://wa.me/16232240331?text=Hello%20Casa%20Emma%2C%20I%20would%20like%20to%20request%20an%20estimate%20for%20a%20remodeling%20project." target="_blank" rel="noopener noreferrer" class="mobile-act-btn mobile-act-chat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         10. LIGHTWEIGHT JAVASCRIPT
+    ===================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Year
+            const yEl = document.getElementById('yearVal');
+            if (yEl) yEl.textContent = new Date().getFullYear();
+
+            // Mobile menu drawer
+            const mBtn = document.getElementById('menuToggle');
+            const drawer = document.getElementById('mobileDrawer');
+            if (mBtn && drawer) {
+                mBtn.addEventListener('click', () => {
+                    mBtn.classList.toggle('active');
+                    drawer.classList.toggle('active');
+                });
+                drawer.querySelectorAll('a').forEach(a => {
+                    a.addEventListener('click', () => {
+                        mBtn.classList.remove('active');
+                        drawer.classList.remove('active');
+                    });
+                });
+            }
+
+            // 100% Real Projects from fotoscasaemma
+            const projects = {
+                kitchen: {
+                    num: "Project 01 of 03",
+                    title: "Kitchen Wall Demolition & Open Concept",
+                    desc: "Tore down the central structural dividing wall to open the kitchen into the main living room. Installed modern shaker cabinetry, an expanded central quartz preparation island, recessed LED lighting, and continuous plank flooring.",
+                    scope: "Wall Demo + Full Kitchen",
+                    time: "Approx. 4 Weeks",
+                    loc: "Phoenix, AZ",
+                    beforeImg: "fotoscasaemma/antescocina.jpg",
+                    afterImg: "fotoscasaemma/despuescocina.jpg"
+                },
+                garage: {
+                    num: "Project 02 of 03",
+                    title: "Garage to Modern Creative Studio",
+                    desc: "Converted an unfinished garage into a conditioned creative studio. Features a polished concrete slab, architectural matte black ceiling with recessed LEDs, a mini-split AC climate control system, and a solid-core black modern door.",
+                    scope: "Garage / Studio Conversion",
+                    time: "Approx. 2 Weeks",
+                    loc: "Phoenix Metro, AZ",
+                    beforeImg: "fotoscasaemma/despuesdegarage.jpeg",
+                    afterImg: "fotoscasaemma/antesdegarage.jpeg"
+                },
+                boveda: {
+                    num: "Project 03 of 03",
+                    title: "Hand-Laid Brick Bóveda Barrel Vault",
+                    desc: "Handcrafted on rolling scaffolding by our specialized masons, this authentic Mexican brick bóveda barrel vault adds timeless character to a residential hallway. Finished with a clean mortar wash, wall lanterns, and Saltillo flooring.",
+                    scope: "Architectural Brick Masonry",
+                    time: "Approx. 2 Weeks",
+                    loc: "Arizona Residence",
+                    beforeImg: "fotoscasaemma/antesdepasillo.jpg",
+                    afterImg: "fotoscasaemma/despuesdepasillo.jpg"
+                }
+            };
+
+            const stage = document.getElementById('compareStage');
+            const beforeImg = document.getElementById('beforeImg');
+            const afterImg = document.getElementById('afterImg');
+            const autoScanBtn = document.getElementById('autoScanBtn');
+
+            const sNum = document.getElementById('sideNum');
+            const sTitle = document.getElementById('sideTitle');
+            const sDesc = document.getElementById('sideDesc');
+            const sScope = document.getElementById('sideScope');
+            const sTime = document.getElementById('sideTime');
+            const sLoc = document.getElementById('sideLoc');
+
+            let isDragging = false;
+            let currentPos = 50;
+            let autoScanTimer = null;
+            let autoScanDir = 1;
+
+            function updateSlider(pct) {
+                const bounded = Math.max(0, Math.min(100, pct));
+                currentPos = bounded;
+                stage.style.setProperty('--slider-pos', `${bounded}%`);
+            }
+
+            function getPct(clientX) {
+                const rect = stage.getBoundingClientRect();
+                return ((clientX - rect.left) / rect.width) * 100;
+            }
+
+            // Mouse
+            stage.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                stopAutoScan();
+                updateSlider(getPct(e.clientX));
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                updateSlider(getPct(e.clientX));
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            // Touch
+            stage.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                stopAutoScan();
+                updateSlider(getPct(e.touches[0].clientX));
+            }, { passive: true });
+
+            stage.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                updateSlider(getPct(e.touches[0].clientX));
+            }, { passive: true });
+
+            stage.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            // Auto-scan
+            function startAutoScan() {
+                autoScanBtn.textContent = "Pause";
+                autoScanBtn.style.background = "var(--c-gold)";
+                autoScanBtn.style.color = "#FFFFFF";
+
+                autoScanTimer = setInterval(() => {
+                    currentPos += autoScanDir * 0.7;
+                    if (currentPos >= 88) autoScanDir = -1;
+                    else if (currentPos <= 12) autoScanDir = 1;
+                    updateSlider(currentPos);
+                }, 16);
+            }
+
+            function stopAutoScan() {
+                if (autoScanTimer) {
+                    clearInterval(autoScanTimer);
+                    autoScanTimer = null;
+                    autoScanBtn.textContent = "Auto Preview";
+                    autoScanBtn.style.background = "";
+                    autoScanBtn.style.color = "";
+                }
+            }
+
+            autoScanBtn.addEventListener('click', () => {
+                if (autoScanTimer) stopAutoScan();
+                else startAutoScan();
+            });
+
+            // Tabs
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const pKey = btn.getAttribute('data-p');
+                    const d = projects[pKey];
+                    if (!d) return;
+
+                    stage.style.opacity = '0.3';
+                    stage.style.transition = 'opacity 0.2s ease';
+
+                    setTimeout(() => {
+                        beforeImg.src = d.beforeImg;
+                        afterImg.src = d.afterImg;
+
+                        sNum.textContent = d.num;
+                        sTitle.textContent = d.title;
+                        sDesc.textContent = d.desc;
+                        sScope.textContent = d.scope;
+                        sTime.textContent = d.time;
+                        sLoc.textContent = d.loc;
+
+                        updateSlider(50);
+                        stage.style.opacity = '1';
+                    }, 200);
+                });
+            });
+
+
+            // Formspree Form Submission Handler (AJAX + Fallback)
+            const form = document.getElementById('estimateForm');
+            const formStatus = document.getElementById('formStatus');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    if (btnText) btnText.textContent = "Sending Request...";
+                    if (submitBtn) submitBtn.disabled = true;
+                    if (formStatus) {
+                        formStatus.style.display = 'none';
+                    }
+
+                    const data = new FormData(form);
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: form.method || 'POST',
+                            body: data,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            form.reset();
+                            if (formStatus) {
+                                formStatus.style.display = 'block';
+                                formStatus.style.background = '#F2F6ED';
+                                formStatus.style.border = '1px solid #4E5B3D';
+                                formStatus.style.color = '#2F3C1F';
+                                formStatus.innerHTML = `
+                                    <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 4px;">Thank you! Your estimate request has been sent.</div>
+                                    <div>We have received your project details and will contact you within 24 hours.</div>
+                                    <div style="margin-top: 10px; font-size: 0.8rem; border-top: 1px solid rgba(78,91,61,0.25); padding-top: 8px;">
+                                        Need an immediate answer? You can also <a href="https://wa.me/16232240331" target="_blank" rel="noopener noreferrer" style="color: #4E5B3D; font-weight: 700; text-decoration: underline;">message us directly on WhatsApp</a> or call <a href="tel:6232240331" style="color: #4E5B3D; font-weight: 700; text-decoration: underline;">623.224.0331</a>.
+                                    </div>
+                                `;
+                            }
+                            if (btnText) btnText.textContent = "Request Sent Successfully";
+                        } else {
+                            // If Formspree returns an error, fallback to traditional submit
+                            form.submit();
+                        }
+                    } catch (err) {
+                        // Network error or offline - fallback to native form submit
+                        form.submit();
+                    } finally {
+                        if (submitBtn) submitBtn.disabled = false;
+                        if (btnText && btnText.textContent === "Sending Request...") {
+                            btnText.textContent = "Submit Estimate Request";
+                        }
+                    }
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
